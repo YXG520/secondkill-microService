@@ -7,6 +7,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.ComponentScans;
 
 @SpringBootApplication
 @EnableDiscoveryClient
@@ -16,9 +17,7 @@ import org.springframework.context.annotation.ComponentScan;
 public class SecondkillGoodsApplication {
 
     public static void main(String[] args) {
-
         SpringApplication.run(SecondkillGoodsApplication.class, args);
-
     }
 
 }

@@ -13,8 +13,8 @@ import redis.clients.jedis.JedisPoolConfig;
  */
 @Configuration
 public class RedisAutoConfig {
-    @Value("${redis.host}")
 
+    @Value("${redis.host}")
     private String host;
 
     @Value("${redis.port}")

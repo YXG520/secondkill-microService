@@ -36,11 +36,6 @@ zuul:
       path: /goods/**
       serviceId: secondkill-goods
       stripPrefix: false
-    secondkill-test:
-      path: /test/**
-      serviceId: secondkill-test
-      stripPrefix: false
-
   prefix: /api
   sensitiveHeaders: "*"
   strip-prefix: true

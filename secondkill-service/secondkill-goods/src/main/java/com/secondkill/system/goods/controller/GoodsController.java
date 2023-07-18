@@ -14,8 +14,6 @@ import com.secondkill.system.goods.service.GoodsService;
 import org.bouncycastle.pqc.crypto.rainbow.RainbowSigner;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.util.StringUtils;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -32,16 +30,11 @@ import java.util.*;
  */
 @RestController
 @RequestMapping("/goods")
-@RefreshScope
 public class GoodsController {
 
     @Autowired
     private GoodsService goodsService;
 
-
-//        @Value("${useLocalCache:false}")
-//    @Value("${useLocalCache}")
-//    private boolean useLocalCache;
     /**
      * 获取秒杀商品列表
      * @return
@@ -93,12 +86,9 @@ public class GoodsController {
         msGoodsDetailVO.setGoodsTitle(tbMsGoods.getTbGoods().getGoodsTitle());
         msGoodsDetailVO.setMsPrice(tbMsGoods.getMsPrice().toString());
         msGoodsDetailVO.setGoodsPrice(tbMsGoods.getTbGoods().getGoodsPrice().toString());
-        msGoodsDetailVO.setMsGoodsStock(tbMsGoods.getMsGoodsStock());
         HashMap<String, Object> resMap = new HashMap<>(2);
         resMap.put("goodsDetail", msGoodsDetailVO);
         resMap.put("serverTime", TimeUtils.date2String(new Date()));
-        System.out.println("商品库存："+ tbMsGoods.getMsGoodsStock());
-
         return ResultUtils.success(resMap);
     }
 

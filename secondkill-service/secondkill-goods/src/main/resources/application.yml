@@ -5,25 +5,14 @@ server:
     basedir: E:\temp\
 
 spring:
-#  profiles:
-#    active: dev
   main:
     allow-bean-definition-overriding: true
-#  application:
-#    name: secondkill-goods
-#  cloud:
-#    nacos:
-#      discovery:
-#        server-addr: secondkill-register:8848
-##        namespace: 01e54ad9-93ba-49ba-bb10-120c1c5fa46d
-#        group: DEFAULT_GROUP
-#      config:
-#        namespace: 01e54ad9-93ba-49ba-bb10-120c1c5fa46d
-#        group: DEFAULT_GROUP
-#        server-addr: secondkill-register:8848
-#        file-extension: yaml # 配置文件格式
-#        shared-configs:
-#          - data-id: secondkill-goods-dev.yaml
+  application:
+    name: secondkill-goods
+  cloud:
+    nacos:
+      discovery:
+        server-addr: secondkill-register:8848
 
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
